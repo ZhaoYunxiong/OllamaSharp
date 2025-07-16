@@ -14,5 +14,5 @@ public interface IToolInvoker
 	/// <param name="tools">The collection of tools to be used for invocation.</param>
 	/// <param name="cancellationToken">A token to monitor for cancellation requests.</param>
 	/// <returns>An asynchronous stream of results from the tool invocations.</returns>
-	Task<ToolResult> InvokeAsync(Message.ToolCall toolCall, IEnumerable<object> tools, CancellationToken cancellationToken);
+	Task<ToolResult> InvokeAsync(Message.MessageToolCall toolCall, IEnumerable<object> tools, CancellationToken cancellationToken);
 }

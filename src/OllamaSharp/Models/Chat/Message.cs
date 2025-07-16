@@ -83,24 +83,24 @@ public class Message
 	/// </summary>
 	[JsonPropertyName("tool_calls")]
 	[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-	public IEnumerable<ToolCall>? ToolCalls { get; set; }
+	public IEnumerable<MessageToolCall>? ToolCalls { get; set; }
 
 	/// <summary>
 	/// Represents a tool call within a message.
 	/// </summary>
-	public class ToolCall
+	public class MessageToolCall
 	{
 		/// <summary>
 		/// Gets or sets the function to be called by the tool.
 		/// </summary>
 		[JsonPropertyName("function")]
-		public Function? Function { get; set; }
+		public MessageFunction? Function { get; set; }
 	}
 
 	/// <summary>
 	/// Represents a function that can be called by a tool.
 	/// </summary>
-	public class Function
+	public class MessageFunction
 	{
 		/// <summary>
 		/// Gets or sets the index of the function.

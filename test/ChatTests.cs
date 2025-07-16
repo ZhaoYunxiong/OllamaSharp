@@ -42,9 +42,9 @@ public class ChatTests
 						Role = ChatRole.Assistant,
 						Content = "",
 						ToolCalls = [
-							new Message.ToolCall
+							new Message.MessageToolCall
 							{
-								Function = new Message.Function
+								Function = new Message.MessageFunction
 								{
 									Name = "get_current_weather",
 									Arguments = new Dictionary<string, object?>()

@@ -261,15 +261,15 @@ internal static class AbstractionMapper
 	}
 
 	/// <summary>
-	/// Converts a Microsoft.Extensions.AI.<see cref="FunctionCallContent"/> to a <see cref="Message.ToolCall"/>.
+	/// Converts a Microsoft.Extensions.AI.<see cref="FunctionCallContent"/> to a <see cref="Message.MessageToolCall"/>.
 	/// </summary>
 	/// <param name="functionCall">The function call content to convert.</param>
-	/// <returns>A <see cref="Message.ToolCall"/> object containing the converted data.</returns>
-	private static Message.ToolCall ToOllamaSharpToolCall(FunctionCallContent functionCall)
+	/// <returns>A <see cref="Message.MessageToolCall"/> object containing the converted data.</returns>
+	private static Message.MessageToolCall ToOllamaSharpToolCall(FunctionCallContent functionCall)
 	{
-		return new Message.ToolCall
+		return new Message.MessageToolCall
 		{
-			Function = new Message.Function
+			Function = new Message.MessageFunction
 			{
 				Arguments = functionCall.Arguments,
 				Name = functionCall.Name

@@ -10,7 +10,7 @@ public class MessageBuilder
 	private readonly StringBuilder _contentBuilder = new();
 	private readonly StringBuilder _thinkContentBuilder = new();
 	private List<string> _images = [];
-	private List<Message.ToolCall> _toolCalls = [];
+	private List<Message.MessageToolCall> _toolCalls = [];
 
 	/// <summary>
 	/// Appends a chat response stream chunk to the message under construction.
@@ -177,7 +177,7 @@ public class MessageBuilder
 	/// Console.WriteLine(messageBuilder.ToolCalls.Count); // Output: 1
 	/// </code>
 	/// </example>
-	public IReadOnlyCollection<Message.ToolCall>? ToolCalls { get; }
+	public IReadOnlyCollection<Message.MessageToolCall>? ToolCalls { get; }
 
 	/// <summary>
 	/// Indicates whether the current <see cref="MessageBuilder"/> instance contains any content, images, or tool calls.

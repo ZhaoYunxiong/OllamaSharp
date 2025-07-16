@@ -8,7 +8,7 @@ namespace OllamaSharp.Tools;
 public class DefaultToolInvoker : IToolInvoker
 {
 	/// <inheritdoc />
-	public async Task<ToolResult> InvokeAsync(Message.ToolCall toolCall, IEnumerable<object> tools, CancellationToken cancellationToken)
+	public async Task<ToolResult> InvokeAsync(Message.MessageToolCall toolCall, IEnumerable<object> tools, CancellationToken cancellationToken)
 	{
 		var callableTools = tools?.OfType<Tool>().ToArray() ?? [];
 		var tool = callableTools.FirstOrDefault(t => (t.Function?.Name ?? string.Empty).Equals(toolCall?.Function?.Name ?? string.Empty, StringComparison.OrdinalIgnoreCase));

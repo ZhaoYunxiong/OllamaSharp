@@ -47,7 +47,7 @@ public class Chat
 	/// <summary>
 	/// Gets fired when the AI model wants to invoke a tool.
 	/// </summary>
-	public event EventHandler<Message.ToolCall>? OnToolCall;
+	public event EventHandler<Message.MessageToolCall>? OnToolCall;
 
 	/// <summary>
 	/// Gets fired after a tool was invoked and the result is available.
@@ -476,7 +476,7 @@ public class Chat
 		}
 	}
 
-	private static string StringifyToolCall(Message.ToolCall toolCall)
+	private static string StringifyToolCall(Message.MessageToolCall toolCall)
 	{
 		return $"{toolCall.Function?.Name ?? "(unnamed tool)"}({string.Join(", ", toolCall.Function?.Arguments?.Select(kvp => $"{kvp.Key}: {kvp.Value}") ?? [])})";
 	}

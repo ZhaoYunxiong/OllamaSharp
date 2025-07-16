@@ -792,9 +792,9 @@ public class AbstractionMapperTests
 				Content = "It seems the sun will be out all day.",
 				ToolCalls =
 				[
-					new Message.ToolCall
+					new Message.MessageToolCall
 					{
-						Function = new Message.Function
+						Function = new Message.MessageFunction
 						{
 							Arguments = new Dictionary<string, object?>
 							{
@@ -849,9 +849,9 @@ public class ToChatMessageMethod : AbstractionMapperTests
 			Content = "It seems the sun will be out all day.",
 			ToolCalls =
 			[
-				new Message.ToolCall
+				new Message.MessageToolCall
 					{
-						Function = new Message.Function
+						Function = new Message.MessageFunction
 						{
 							Arguments = new Dictionary<string, object?>
 							{
